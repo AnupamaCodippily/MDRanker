@@ -22,7 +22,6 @@ public class Server extends UnicastRemoteObject implements ReviewHandler, DataHa
 
 	@Override
 	public Vector<HashMap<String, String>> fetchAllReviewsOfType(HashMap type) {
-		
 		return null;
 	}
 
@@ -30,7 +29,6 @@ public class Server extends UnicastRemoteObject implements ReviewHandler, DataHa
 	public Vector<HashMap<String, String>> fetchAllDataOfType(String table, String field) {
 		return new ReviewableProxy().fetchAllOfType(table, field);
 	}
-	
 
 
 	@Override
@@ -58,10 +56,6 @@ public class Server extends UnicastRemoteObject implements ReviewHandler, DataHa
 		// TODO Auto-generated method stub
 		
 	}
-	
-
-
-
 
 
 }

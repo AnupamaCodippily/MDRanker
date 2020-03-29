@@ -3,10 +3,9 @@ package server.utils;
 import java.sql.*;
 import java.util.function.Consumer;
 
-import server.Reviewable;
 
 public class Database {
-	public static Connection getConnection() {
+	private static Connection getConnection() {
 		
 		Connection con = null;
 		
@@ -15,8 +14,7 @@ public class Database {
         	Class.forName("com.mysql.cj.jdbc.Driver");  
         	
         	con =DriverManager.getConnection(  
-        	"jdbc:mysql://localhost:3306/mdranker","root","test"); 
-        	
+        	"jdbc:mysql://localhost/mdranker?serverTimezone=UTC","root",""); 
         	}
         catch(Exception e)
         { 
@@ -27,7 +25,21 @@ public class Database {
 		return con;
 	}
 	
-	public static void closeDBConnection ( Connection con) {
+	public static ResultSet getResultSet(String query) throws SQLException {
+		
+		
+		Connection conn = getConnection();
+
+    	Statement statement=conn.createStatement();  
+		
+    	ResultSet resultSet = statement.executeQuery(query);
+    	
+    	closeDBConnection(conn);
+    	return null;
+		
+	}
+	
+	private static void closeDBConnection ( Connection con) {
 		try {
 			if (con != null && !con.isClosed()) {
 				con.close();

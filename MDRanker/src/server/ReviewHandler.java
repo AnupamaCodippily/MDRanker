@@ -7,11 +7,10 @@ import java.util.Vector;
 
 public interface ReviewHandler extends Remote{
 
-	public static void makeReview(Review review) throws RemoteException{
-		
-	}
-	public Review fetchReview(Review temp) throws RemoteException;
-	public Vector<Review> fetchAllReviewsOfType(HashMap type) throws RemoteException;
-	boolean deleteReview(Review review) throws RemoteException;
+
+	public Vector<HashMap<String, String>> fetchReview() throws RemoteException;
+	public Vector<HashMap<String, String>> fetchAllReviewsOfType(HashMap type) throws RemoteException;
+	boolean deleteReview(String id) throws RemoteException;
+	Vector<HashMap<String, String>> fetchAllReviews(String table);
 	
 }

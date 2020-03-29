@@ -132,7 +132,7 @@ class handleSearchType implements ActionListener {
 	public void actionPerformed(ActionEvent ex) {
 		
 		try {
-			hospitals = dataHandler.fetchAllDataOfType("hospital");
+			hospitals = dataHandler.fetchData("hospital");
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}

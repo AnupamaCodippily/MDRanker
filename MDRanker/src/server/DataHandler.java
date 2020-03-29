@@ -7,11 +7,9 @@ import java.util.Vector;
 
 public interface DataHandler extends Remote{
 
-	public static void makeData() throws RemoteException{
-		
-	}
-	public HashMap <String, String> fetchData(Reviewable temp) throws RemoteException;
-	public    Vector<HashMap<String, String>>    fetchAllDataOfType(String request) throws RemoteException;
-	boolean deleteData(Review review) throws RemoteException;
+	public void makeData() throws RemoteException;
+	public Vector<HashMap<String, String>> fetchData(String request) throws RemoteException;
+	public    Vector<HashMap<String, String>> fetchAllDataOfType(String table, String field) throws RemoteException;
+	boolean delete(String id) throws RemoteException;
 	
 }

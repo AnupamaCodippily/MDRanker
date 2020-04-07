@@ -10,6 +10,7 @@ import server.ReviewHandler;
 public class Client  {
 	
 	DataHandler dataHandler;
+	ReviewHandler reviewHandler;
 	
 	public Client () {
 		new ClientGUI(dataHandler);

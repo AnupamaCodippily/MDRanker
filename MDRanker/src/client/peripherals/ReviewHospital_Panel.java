@@ -2,8 +2,6 @@ package client.peripherals;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.rmi.RemoteException;
 import java.util.HashMap;
 import java.util.Vector;
@@ -16,18 +14,9 @@ import javax.swing.JTextField;
 
 import server.DataHandler;
 import javax.swing.SpringLayout;
-import java.awt.Dialog;
-import javax.swing.JScrollPane;
 import javax.swing.BoxLayout;
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
-import java.awt.BorderLayout;
-import java.awt.CardLayout;
-import javax.swing.JScrollBar;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-import net.miginfocom.swing.MigLayout;
 import java.awt.GridLayout;
 
 public class ReviewHospital_Panel extends JFrame {

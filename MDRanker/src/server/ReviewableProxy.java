@@ -11,7 +11,7 @@ public class ReviewableProxy {
 		
 	}
 	
-	public Vector <HashMap<String, String>> buildAll (String request) {
+	public static Vector <HashMap<String, String>> buildAll (String request) {
 		
 		Vector <HashMap<String, String>> result = null;
 		
@@ -23,7 +23,7 @@ public class ReviewableProxy {
 		return result;
 	} 
 	
-	public Vector <HashMap<String, String>> fetchAllOfType (String table,String field) {
+	public static Vector <HashMap<String, String>> fetchAllOfType (String table,String field) {
 		Vector <HashMap<String, String>> result = null;
 		
 		switch (table) {

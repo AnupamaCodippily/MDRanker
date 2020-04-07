@@ -1,13 +1,6 @@
 package client.testing;
 
-import java.net.MalformedURLException;
-import java.rmi.Naming;
-import java.rmi.NotBoundException;
-import java.rmi.RemoteException;
-import java.util.HashMap;
-import java.util.Vector;
 
-import server.DataHandler;
 
 public class RequestTesting  {
 	public static void main (String args []) {

@@ -3,10 +3,8 @@ package client.peripherals;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.rmi.RemoteException;
-import java.util.HashMap;
 
 import javax.swing.JComponent;
-import javax.swing.JLabel;
 
 import server.DataHandler;
 

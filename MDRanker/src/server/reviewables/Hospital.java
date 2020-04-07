@@ -26,8 +26,10 @@ public class Hospital {
 	   			map.put("rating", rating);
 	   			vector.add(map);
 	   		}	 
+	        
+	        Database.closeConnection(resultSet);
         }catch (Exception ex) {
-        	System.out.println("error fetching doctors from db");
+        	System.out.println("error fetching hospitals from db");
         	ex.printStackTrace();
         } 
 		return vector;

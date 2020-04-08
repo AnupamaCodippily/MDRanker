@@ -96,7 +96,7 @@ public class GUI_Search {
 					String specialization = searchSpecializationTxt.getText();
 					String searchlocation = searchLocationtxt.getText();
 					
-					doctors = Globals.dataHandler.fetchDataByQuery_oneCondition(column, table, queryColumn, queryValue);
+					
 					
 				}catch(Exception e1) {
 					JOptionPane.showMessageDialog(null, "Invalid entry",null, JOptionPane.ERROR_MESSAGE);

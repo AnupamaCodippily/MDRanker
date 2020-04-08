@@ -69,7 +69,12 @@ public class Server extends UnicastRemoteObject implements ReviewHandler, DataHa
 		return null;
 	}
 	@Override
-	public Vector<HashMap<String, String>> ExecuteRawQuery(String rawQuery) {
+	public Vector<HashMap<String, String>> ExecuteRawFetchQuery(String rawQuery) {
+		
+		return null;
+	}
+	@Override
+	public Vector<HashMap<String, String>> ExecuteRawUpdateQuery(String rawQuery) {
 		
 		return null;
 	}

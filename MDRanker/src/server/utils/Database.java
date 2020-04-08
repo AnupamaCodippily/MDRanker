@@ -69,17 +69,16 @@ public class Database {
 	
 	public static Vector<HashMap<String, String>> executeRawQuery(String query, String ... args) {
 		
-		Vector<HashMap<String, String>> vector = null;
+		Vector<HashMap<String, String>> vector = new Vector<HashMap<String, String>>();
 		
 		try {
 			ResultSet result = getResultSet(query);
 			
 			while(result.next()) {
-	        	String name = result.getString("name");
-	        	String specialization = result.getString("specialization");
 	   			HashMap <String, String> map = new HashMap<String, String> ();
-	   			map.put("name",name );
-	   			map.put("specialization",specialization);
+				for (String arg : args) {
+					map.put(arg, result.getString(arg));
+				}
 	   			vector.add(map);
 	   		}	  	 
 			

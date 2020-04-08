@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Vector;
 
 
-public class Server extends UnicastRemoteObject implements ReviewHandler, DataHandler{
+public class Server extends UnicastRemoteObject implements ReviewHandler, DataHandler,ToolsetHandler{
 
 	/**
 	 * 
@@ -25,11 +25,6 @@ public class Server extends UnicastRemoteObject implements ReviewHandler, DataHa
 		return ReviewProxy.fetchAllOfType(table, field);
 	}
 
-
-	@Override
-	public Vector<HashMap<String, String>> fetchAllReviewsByQuery(String column, String table, String field, String fieldValue) {
-		return ReviewProxy.fetchAllByQuery(column, table, field, fieldValue);
-	}
 	
 	@Override
 	public Vector<HashMap<String, String>> fetchAllDataOfType(String table, String field) {
@@ -61,6 +56,22 @@ public class Server extends UnicastRemoteObject implements ReviewHandler, DataHa
 	public void makeData() throws RemoteException {
 		// TODO Auto-generated method stub
 		
+	}
+	@Override
+	public Vector<HashMap<String, String>> fetchDataByQuery_oneCondition(String column, String table, String queryColumn,
+			String queryValue) throws RemoteException {
+		return ReviewableProxy.fetchByQuery_OneCondition(column, table, queryColumn, queryValue);
+	}
+	@Override
+	public Vector<HashMap<String, String>> fetchAllReviewsByQuery(String column, String table, String field,
+			String fieldValue) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Vector<HashMap<String, String>> ExecuteRawQuery(String rawQuery) {
+		
+		return null;
 	}
 
 

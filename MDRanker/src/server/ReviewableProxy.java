@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Vector;
 
 import server.reviewables.*;
+import server.reviews.DoctorReview;
+import server.reviews.HospitalReview;
 
 public class ReviewableProxy {
 	
@@ -32,6 +34,16 @@ public class ReviewableProxy {
 		}
 		
 		return result;
+	}
+	// Under Construction
+	public static Vector<HashMap<String, String>> fetchByQuery_OneCondition(String column, String table, String field, String fieldValue) {
+		Vector<HashMap<String, String>> results = null;
+		switch (table) {
+		case "doctor" : results = DoctorReview.fetchAll(); break;
+		case "hospital" : results = HospitalReview.fetchAll(); break;
+		}
+		
+		return results;
 	}
 	
 	

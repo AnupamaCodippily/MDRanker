@@ -31,15 +31,6 @@ public class ReviewProxy {
 	}
 	
 	
-	// Under Construction
-	public static Vector<HashMap<String, String>> fetchAllByQuery(String column, String table, String field, String fieldValue) {
-		Vector<HashMap<String, String>> results = null;
-		switch (table) {
-		case "doctor" : results = DoctorReview.fetchAll(); break;
-		case "hospital" : results = HospitalReview.fetchAll(); break;
-		}
-		
-		return results;
-	}
+
 	
 }

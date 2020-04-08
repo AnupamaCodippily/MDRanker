@@ -16,10 +16,11 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 import server.DataHandler;
+import server.ReviewHandler;
 
 public class ClientGUI{
 
-	public ClientGUI (DataHandler dataHandler) {
+	public ClientGUI () {
 
 		buildClientGUI();
 
@@ -96,7 +97,7 @@ public class ClientGUI{
 	}
 	
 }
-
+/*
 class ReviewClickListener implements ActionListener {
 
 	DataHandler handler;
@@ -125,3 +126,4 @@ class ReviewClickListener implements ActionListener {
 	}
 
 }
+*/

@@ -1,6 +1,8 @@
 package server.utils;
 
 import java.sql.*;
+import java.util.Vector;
+import java.util.HashMap;
 
 
 public class Database {
@@ -40,16 +42,16 @@ public class Database {
     	
 	}
 	
-	private static void closeDBConnection ( Connection con) {
-		try {
-			if (con != null && !con.isClosed()) {
-				con.close();
-			}
-		} catch (SQLException e) {
-			
-			e.printStackTrace();
-		}
-	}
+//	private static void closeDBConnection ( Connection con) {
+//		try {
+//			if (con != null && !con.isClosed()) {
+//				con.close();
+//			}
+//		} catch (SQLException e) {
+//			
+//			e.printStackTrace();
+//		}
+//	}
 	
 	public static void closeConnection ( ResultSet resultSet) {
 		
@@ -64,4 +66,30 @@ public class Database {
 		}
 	}
 
+	
+	public static Vector<HashMap<String, String>> executeRawQuery(String query, String ... args) {
+		
+		Vector<HashMap<String, String>> vector = null;
+		
+		try {
+			ResultSet result = getResultSet(query);
+			
+			while(result.next()) {
+	        	String name = result.getString("name");
+	        	String specialization = result.getString("specialization");
+	   			HashMap <String, String> map = new HashMap<String, String> ();
+	   			map.put("name",name );
+	   			map.put("specialization",specialization);
+	   			vector.add(map);
+	   		}	  	 
+			
+		} catch (SQLException e) {
+			System.out.println("Error executing raw query. An SQL Exception has occured");
+			e.printStackTrace();
+		}
+		
+		
+		return vector;
+	}
+	
 }
